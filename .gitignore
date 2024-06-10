@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+#checkpoints
+checkpoint/
+/.vs
