@@ -1,32 +1,32 @@
 <div align='center'>
-	<font size=70> AutoDance </font>
+	<strong><font size=6> AutoDance </font></strong>
 </div>
 
 This project is an simple implement of MHformer and aims at transferring dancing video to vmd files.
-±¾ÏîÄ¿ÊÇ¶ÔMHFormerµÄÊµ¼ÊÓ¦ÓÃ£¬ÓÃÓÚÊ¶±ğµ¥ÈËÎèµ¸ÊÓÆµ²¢Éú³ÉvmdÎÄ¼ş¡£ÇëÊäÈëµ¥ÈËÈ«ÉíÊÓÆµÒÔ±£Ö¤Ğ§¹û£¬ÊÓÆµµÚÒ»Ö¡±ØĞë³öÏÖÈËÎï£¬Éú³ÉµÄÈËÎï¶¯×÷ÒÀ¾İh36m¸ñÊ½£¬¹²ÓĞ17¸ö¹Ø¼üµã£¬Ã»ÓĞ±íÇé¡¢ÊÖ²¿ºÍ×ã²¿¶¯×÷¡£
+æœ¬é¡¹ç›®æ˜¯å¯¹MHFormerçš„å®é™…åº”ç”¨ï¼Œç”¨äºè¯†åˆ«å•äººèˆè¹ˆè§†é¢‘å¹¶ç”Ÿæˆvmdæ–‡ä»¶ã€‚è¯·è¾“å…¥å•äººå…¨èº«è§†é¢‘ä»¥ä¿è¯æ•ˆæœï¼Œè§†é¢‘ç¬¬ä¸€å¸§å¿…é¡»å‡ºç°äººç‰©ï¼Œç”Ÿæˆçš„äººç‰©åŠ¨ä½œä¾æ®h36mæ ¼å¼ï¼Œå…±æœ‰17ä¸ªå…³é”®ç‚¹ï¼Œæ²¡æœ‰è¡¨æƒ…ã€æ‰‹éƒ¨å’Œè¶³éƒ¨åŠ¨ä½œã€‚
 
 
 
 ## Installation
 Please check your environment before installation. Nvidia GPU is highly recommanded.
-ÇëÔÚ°²×°Ç°¼ì²éÄãµÄÓ²¼ş£¬ÍÆ¼öÓ¢Î°´ïÏÔ¿¨²¢²é¿´ÄãµÄĞÍºÅÊÇ·ñÖ§³Öcuda11.1
+è¯·åœ¨å®‰è£…å‰æ£€æŸ¥ä½ çš„ç¡¬ä»¶ï¼Œæ¨èè‹±ä¼Ÿè¾¾æ˜¾å¡å¹¶æŸ¥çœ‹ä½ çš„å‹å·æ˜¯å¦æ”¯æŒcuda11.1
 Install anaconda,cuda,cudnn first.
-ÇëÏÈ°²×°Anaconda£¬¸üĞÂNVIDIAÇı¶¯ÒÔ¼°°²×°cudaºÍcudnn¡£
+è¯·å…ˆå®‰è£…Anacondaï¼Œæ›´æ–°NVIDIAé©±åŠ¨ä»¥åŠå®‰è£…cudaå’Œcudnnã€‚
 
 - Create a conda environment: 
-- ´´½¨ĞéÄâ»·¾³£º
+- åˆ›å»ºè™šæ‹Ÿç¯å¢ƒï¼š
 ```conda create -n mhformer python=3.9```
 - Activate the environment:
-- ¼¤»îĞéÄâ»·¾³£º
+- æ¿€æ´»è™šæ‹Ÿç¯å¢ƒï¼š
 ```conda activate mhformer```
 - Install PyTorch 1.9.1, Torchvision 0.10.1 and cuda11.1 following the [official instructions](https://pytorch.org/):
-- °´ÕÕ[¹Ù·½ÎÄµµ](https://pytorch.org/)°²×°cuda11.1µÄpytorch 1.9.1ºÍtorchvision 0.10.1£¨ÆäÓà°æ±¾Çë×ÔĞĞ½â¾ö£©£º
+- æŒ‰ç…§[å®˜æ–¹æ–‡æ¡£](https://pytorch.org/)å®‰è£…cuda11.1çš„pytorch 1.9.1å’Œtorchvision 0.10.1ï¼ˆå…¶ä½™ç‰ˆæœ¬è¯·è‡ªè¡Œè§£å†³ï¼‰ï¼š
 ```pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html```
 - Install packages: 
-- °²×°ÏàÓ¦µÄ°ü£º
+- å®‰è£…ç›¸åº”çš„åŒ…ï¼š
 ```pip3 install -r requirements.txt```
 - Install mmpose following the [official instructions](https://mmpose.readthedocs.io/zh-cn/dev-1.x/installation.html). Start from Step.3:
-- °´ÕÕ[¹Ù·½ÎÄµµ](https://mmpose.readthedocs.io/zh-cn/dev-1.x/installation.html)´ÓµÚÈı²½¿ªÊ¼°²×°mmpose£º
+- æŒ‰ç…§[å®˜æ–¹æ–‡æ¡£](https://mmpose.readthedocs.io/zh-cn/dev-1.x/installation.html)ä»ç¬¬ä¸‰æ­¥å¼€å§‹å®‰è£…mmposeï¼š
 ```pip install -U openmim```
 ```mim install mmengine```
 ```mim install "mmcv>=2.0.1"```
@@ -38,28 +38,28 @@ Install anaconda,cuda,cudnn first.
 ## Download pretrained model
 
 The pretrained model can be found in [here](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing) (from MHFormer), please download it and put it in the './checkpoint/pretrained' directory.
-MHFormerÌá¹©ÁËÔ¤ÑµÁ·Ä£ĞÍ£¬ÇëÔÚ[´Ë´¦](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing)ÏÂÔØ£¬²¢·Åµ½'./checkpoint/pretrained'Ä¿Â¼ÏÂ¡£
+MHFormeræä¾›äº†é¢„è®­ç»ƒæ¨¡å‹ï¼Œè¯·åœ¨[æ­¤å¤„](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing)ä¸‹è½½ï¼Œå¹¶æ”¾åˆ°'./checkpoint/pretrained'ç›®å½•ä¸‹ã€‚
 
 
 ## Demo
 MMPose will automately download the pretrained models. Please leave enough place.
-mmpose»á×Ô¶¯ÏÂÔØËùĞèµÄÄ£ĞÍ£¬ÇëÔÚcÅÌÁôÏÂ×ã¹»µÄ¿Õ¼ä¡££¨Ä¬ÈÏµÄvitposeÄ¿Ç°×¼È·ÂÊ×î¸ß£¬ËÙ¶È½ÏÂı£¬Ô¼Õ¼2G£©
+mmposeä¼šè‡ªåŠ¨ä¸‹è½½æ‰€éœ€çš„æ¨¡å‹ï¼Œè¯·åœ¨cç›˜ç•™ä¸‹è¶³å¤Ÿçš„ç©ºé—´ã€‚ï¼ˆé»˜è®¤çš„vitposeç›®å‰å‡†ç¡®ç‡æœ€é«˜ï¼Œé€Ÿåº¦è¾ƒæ…¢ï¼Œçº¦å 2Gï¼‰
 Then, you need to put your in-the-wild videos in the './demo/video' directory. 
-È»ºóÄãĞèÒª°Ñ×Ô¼ºµÄÊÓÆµ·ÅÔÚ'./demo/video'Ä¿Â¼ÏÂ¡£
+ç„¶åä½ éœ€è¦æŠŠè‡ªå·±çš„è§†é¢‘æ”¾åœ¨'./demo/video'ç›®å½•ä¸‹ã€‚
 Run the command like below:
-ÔÚÃüÁîĞĞÖĞÖ´ĞĞÀàËÆÃüÁî£¬Ê¾ÀıÈçÏÂ£º
+åœ¨å‘½ä»¤è¡Œä¸­æ‰§è¡Œç±»ä¼¼å‘½ä»¤ï¼Œç¤ºä¾‹å¦‚ä¸‹ï¼š
 ```bash
 python demo/vis.py --video sample_video.mp4 --model vitpose-h
 ```
 
 - P.S.
-- ×¢Òâ
+- æ³¨æ„
 Please ignore the warning messages from mmengine.
-ÇëºöÂÔÀ´×ÔmmengineµÄ¾¯¸æ¡£
+è¯·å¿½ç•¥æ¥è‡ªmmengineçš„è­¦å‘Šã€‚
 The output will be saved in the './demo/output' directory.
-Êä³öÎÄ¼ş½«»á±£´æÔÚ'./demo/output'ÎÄ¼ş¼ĞÏÂ¡£
+è¾“å‡ºæ–‡ä»¶å°†ä¼šä¿å­˜åœ¨'./demo/output'æ–‡ä»¶å¤¹ä¸‹ã€‚
 You can change the model according to the [official instructions](https://mmpose.readthedocs.io/zh-cn/dev-1.x/model_zoo/body_2d_keypoint.html)
-Äã¿ÉÒÔ¸ù¾İmmposeµÄ[¹Ù·½ÎÄµµ](https://mmpose.readthedocs.io/zh-cn/dev-1.x/model_zoo/body_2d_keypoint.html)£¬¸ü¸ÄËùÊ¹ÓÃµÄÄ£ĞÍ¡£
+ä½ å¯ä»¥æ ¹æ®mmposeçš„[å®˜æ–¹æ–‡æ¡£](https://mmpose.readthedocs.io/zh-cn/dev-1.x/model_zoo/body_2d_keypoint.html)ï¼Œæ›´æ”¹æ‰€ä½¿ç”¨çš„æ¨¡å‹ã€‚
 
 
 ##
