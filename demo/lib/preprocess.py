@@ -13,7 +13,7 @@ def coco_h36m(keypoints):
     htps_keypoints = np.zeros((temporal, 4, 2), dtype=np.float32)
 
     # htps_keypoints: head, thorax, pelvis, spine
-    htps_keypoints[:, 0, 0] = np.mean(keypoints[:, 1:5, 0], axis=1, dtype=np.float32)
+    htps_keypoints[:, 0, 0] = np.mean(keypoints[:, 1:3, 0], axis=1, dtype=np.float32)
     htps_keypoints[:, 0, 1] = np.sum(keypoints[:, 1:3, 1], axis=1, dtype=np.float32) - keypoints[:, 0, 1]
     htps_keypoints[:, 1, :] = np.mean(keypoints[:, 5:7, :], axis=1, dtype=np.float32)
     htps_keypoints[:, 1, :] += (keypoints[:, 0, :] - htps_keypoints[:, 1, :]) / 3

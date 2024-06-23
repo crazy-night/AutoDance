@@ -1,5 +1,6 @@
 # AutoDance
-This is just a uncompleted introduction. This project is an implement of MHformer and aims at transfer video to vmd files, which can be used in games like HS2.
+This is just a uncompleted introduction. This project is an implement of MHformer and aims at transfering video to vmd files
+本项目是对MHFormer的实际应用，用于识别单人舞蹈视频并生成vmd文件
 
 
 
@@ -30,13 +31,14 @@ python demo/vis.py --video sample_video.mp4
 
 ## Acknowledgement
 
-My code is extended from the following repositories. We thank the authors for releasing the codes. 
+My code is extended from the following repositories. I thank the authors for releasing the codes. 
 
 - [ST-GCN](https://github.com/vanoracai/Exploiting-Spatial-temporal-Relationships-for-3D-Pose-Estimation-via-Graph-Convolutional-Networks)
 - [VideoPose3D](https://github.com/facebookresearch/VideoPose3D)
 - [3d-pose-baseline](https://github.com/una-dinosauria/3d-pose-baseline)
 - [3d_pose_baseline_pytorch](https://github.com/weigq/3d_pose_baseline_pytorch)
 - [StridedTransformer-Pose3D](https://github.com/Vegetebird/StridedTransformer-Pose3D)
+- [MHFormer](https://github.com/Vegetebird/MHFormer)
 ## Licence
 
 This project is licensed under the terms of the MIT license.

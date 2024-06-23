@@ -35,7 +35,7 @@ def positions_to_frames(index, pos, head_rotation=None):
 
     # 首は回転させず、頭のみ回転させる
     # 頭
-    '''bf = VmdBoneFrame(index)
+    bf = VmdBoneFrame(index)
     bf.name = b'\x93\xaa'
     if head_rotation is None:
         # direction = pos[10] - pos[9]
@@ -47,7 +47,7 @@ def positions_to_frames(index, pos, head_rotation=None):
         bf.rotation = upper_body_rotation.inverted() * rotation
     else:
         bf.rotation = upper_body_rotation.inverted() * head_rotation
-    frames.append(bf)'''
+    frames.append(bf)
         
     # 左腕
     bf = VmdBoneFrame(index)

@@ -1,11 +1,13 @@
 import sys
 import argparse
 import cv2
-from lib.preprocess import h36m_coco_format, revise_kpts
-from lib.yolov8.yolo import gen_video_kpts as yolo_pose
-from lib.hrnet.gen_kpts import gen_video_kpts as hrnet_pose
-from pos2vmd import pos2vmd
 import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+
+from lib.preprocess import h36m_coco_format, revise_kpts
+from lib.mmlab.gen_kpts import gen_video_kpts as mm_pose
+from pos2vmd import pos2vmd
+
 import numpy as np
 import torch
 import glob
@@ -13,7 +15,6 @@ from tqdm import tqdm
 import copy
 from IPython import embed
 
-os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 
 sys.path.append(os.getcwd())
@@ -48,11 +49,12 @@ def get_pose2D(video_path, output_dir):
 
     with torch.no_grad():
         # the first frame of the video should be detected a person
-        keypoints, scores = yolo_pose(video_path, num_peroson=1)
+        #keypoints, scores = yolo_pose(video_path, num_peroson=1)
+        keypoints, scores = mm_pose(video_path, num_peroson=1)
         #keypoints, scores = hrnet_pose(video_path, det_dim=416, num_peroson=1, gen_output=True)
     keypoints, scores, valid_frames = h36m_coco_format(keypoints, scores)
     re_kpts = revise_kpts(keypoints, scores, valid_frames)
-    np.savez_compressed(output_npz, reconstruction=keypoints)
+    np.savez_compressed(output_npz, reconstruction=re_kpts)
     print("Generating 2D pose successfully!")
 
 
