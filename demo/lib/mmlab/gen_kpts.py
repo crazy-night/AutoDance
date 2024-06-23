@@ -6,12 +6,12 @@ import cv2
 from tqdm import tqdm
 
 
-def gen_video_kpts(video, num_peroson=1):
+def gen_video_kpts(video, model, num_peroson=1):
 
     register_all_modules()
 
     # 使用模型别名创建推理器
-    inferencer = MMPoseInferencer("vitpose-h")
+    inferencer = MMPoseInferencer(model)
 
     # MMPoseInferencer采用了惰性推断方法，在给定输入时创建一个预测生成器
     result_generator = inferencer(video, show=False)

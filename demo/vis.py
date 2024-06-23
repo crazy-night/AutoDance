@@ -31,7 +31,7 @@ matplotlib.rcParams["pdf.fonttype"] = 42
 matplotlib.rcParams["ps.fonttype"] = 42
 
 
-def get_pose2D(video_path, output_dir):
+def get_pose2D(video_path, output_dir,model):
     print("\nGenerating 2D pose...")
 
     output_dir += "input_2D/"
@@ -49,8 +49,7 @@ def get_pose2D(video_path, output_dir):
 
     with torch.no_grad():
         # the first frame of the video should be detected a person
-        #keypoints, scores = yolo_pose(video_path, num_peroson=1)
-        keypoints, scores = mm_pose(video_path, num_peroson=1)
+        keypoints, scores = mm_pose(video_path, model,num_peroson=1)
         #keypoints, scores = hrnet_pose(video_path, det_dim=416, num_peroson=1, gen_output=True)
     keypoints, scores, valid_frames = h36m_coco_format(keypoints, scores)
     re_kpts = revise_kpts(keypoints, scores, valid_frames)
@@ -173,6 +172,7 @@ if __name__ == "__main__":
         "--video", type=str, default="sample_video.mp4", help="input video"
     )
     parser.add_argument("--gpu", type=str, default="0", help="input video")
+    parser.add_argument("--model", type=str, default="vitpose-h", help="input video")
     args = parser.parse_args()
 
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
@@ -181,7 +181,7 @@ if __name__ == "__main__":
     video_name = video_path.split("/")[-1].split(".")[0]
     output_dir = "./demo/output/" + video_name + "/"
 
-    get_pose2D(video_path, output_dir)
+    get_pose2D(video_path, output_dir, args.model)
     get_pose3D(video_path, output_dir)
     vmd_path = output_dir
     #default: 1 person
