@@ -1,6 +1,4 @@
-<div align='center'>
-	<strong><font size=6> AutoDance </font></strong>
-</div>
+# **AutoDance**
 
 This project is an simple implement of MHformer and aims at transferring dancing video to vmd files.
 本项目是对MHFormer的实际应用，用于识别单人舞蹈视频并生成vmd文件。请输入单人全身视频以保证效果，视频第一帧必须出现人物，生成的人物动作依据h36m格式，共有17个关键点，没有表情、手部和足部动作。
