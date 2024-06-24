@@ -26,22 +26,23 @@ Install anaconda,cuda,cudnn first.
 
 - Install packages: 
 - 安装相应的包：  
+```git clone https://github.com/crazy-night/AutoDance.git```  
 ```pip3 install -r requirements.txt```
 
 - Install mmpose following the [official instructions](https://mmpose.readthedocs.io/zh-cn/dev-1.x/installation.html). Start from Step.3:
 - 按照[官方文档](https://mmpose.readthedocs.io/zh-cn/dev-1.x/installation.html)从第三步开始安装mmpose：  
-```pip install -U openmim```
-```mim install mmengine```
-```mim install "mmcv>=2.0.1"```
-```mim install "mmdet>=3.1.0"```
-```mim install "mmpose>=1.1.0"```
-```mim install 'mmpretrain>=1.0.0'```
+```pip install -U openmim```  
+```mim install mmengine```  
+```mim install "mmcv>=2.0.1"```  
+```mim install "mmdet>=3.1.0"```  
+```mim install "mmpose>=1.1.0"```  
+```mim install 'mmpretrain>=1.0.0'```  
   
 ##
 
 ## Download pretrained model  下载预训练模型
 
-The pretrained model can be found in [here](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing) (from MHFormer), please download it and put it in the './checkpoint/pretrained' directory.
+The pretrained model can be found in [here](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing) (from MHFormer), please download it and put it in the './checkpoint/pretrained' directory.  
 MHFormer提供了预训练模型，请在[此处](https://drive.google.com/drive/folders/1UWuaJ_nE19x2aM-Th221UpdhRPSCFwZa?usp=sharing)下载，并放到'./checkpoint/pretrained'目录下。
 
 ##
